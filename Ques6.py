@@ -7,15 +7,24 @@ def
 count_letters_in_numbers_up_to_1000(
 ):
   total_letters=0;
+  letters_used = []
   total_letters +=sum(ones)
+  letters_used.extend(ones)
   total_letters +=sum(teens)
+  letters_used.extend(teens)
   total_letters +=sum(tens)*10
+  letters_used.extend([sum(tens)]*10)
   total_letters +=sum(hundreds)*100
+  letters_used.extend([sum(hundreds)]*100)
   total_letters += 3 * 99
-  total_letters += 11  #for one thousand
-  return total_letters #return the total count
+  letters_used.extend([3]*99)
+  total_letters += 11#for one thousand
+  leters_used.append(11)
+  
+  return total_letters,letters_used #return the total count
+  total_letters , letters_used = count_letters_in_numbers_up_to_1000()
 
-total_letters = count_letters_in_numbers_up_to_1000()
-print("The total number of letters from 1 to 1000 are:", total_letters)
+  total_letters = count_letters_in_numbers_up_to_1000()
+  print("The total number of letters from 1 to 1000 are:", total_letters)
 
   
